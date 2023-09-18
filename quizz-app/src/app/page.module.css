@@ -1,10 +1,19 @@
-.main {
+.mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
+  /* padding: 6rem; */
   min-height: 100vh;
+  width: 100vw;
+  border: 1px solid red;
+}
+.appContainer{
+  width: 400px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(175, 156, 243, 0.00) 7.92%, #AF9CF3 86.48%);
+  background-blend-mode: multiply;
+  border: 1px solid red;
 }
 
 .description {
