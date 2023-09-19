@@ -1,11 +1,12 @@
 .container{
-    height: 200px;
+    height: 180px;
     width: 200px;
     border-radius: 50%;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.10));
 }
 .quizzText{
     font-size: 40px;
