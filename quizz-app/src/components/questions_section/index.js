@@ -74,8 +74,8 @@ export const QuestionContainer = ({question_id}) => {
             />
           </div>
         )}
-        {!!choices.length && choices.map((item => 
-          <div className={styles.options}>
+        {!!choices.length && choices.map(((item,index) => 
+          <div key={index} className={styles.options}>
             <Option optionData={item} handleOptionSelection={handleOptionSelection} />
           </div>
         
