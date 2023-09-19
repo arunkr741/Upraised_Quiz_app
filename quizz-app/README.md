@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This project is using an open mock server API, which has only 50 request limit.
+So for showing the demo, I have to regularly change it's subdomain to make it work, so feel free to reachout to me for that
+
+Deployed link - https://upraised-quiz-app-3j4u.vercel.app/
 
 ## Getting Started
 
@@ -15,9 +19,6 @@ npm run dev
 # or
 yarn dev
 ```
-
-this project is using an open mock server API, which has only 50 request limit.
-So for showing the demo, I have to regularly change it's subdomain to make it work, so feel free to reachout to me for that
 
 
 
