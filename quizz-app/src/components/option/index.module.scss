@@ -1,0 +1,27 @@
+.optionContainer{
+    width: 360px;
+    height: 65px;
+    background-color: #F3F4FA;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 2px solid #F3F4FA;
+}
+.flex{
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+    align-items: center;
+}
+.optionText{
+    color: #000;
+    // font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+.checkedStyles{
+    border: 2px solid #44B77B;
+}

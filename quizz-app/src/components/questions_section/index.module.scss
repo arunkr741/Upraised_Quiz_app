@@ -1,7 +1,8 @@
 .container{
     background-color: #fff;
     width: 100%;
-    height: 40vh;
+    height: 73.7vh;
+    // height: auto;
     overflow-y: scroll;
     border-radius: 16px 16px 0px 0px;
 }
@@ -10,11 +11,31 @@
   }
 
 .questionText{
-    padding: 90px 16px 16px 16px;
+    padding: 0px 16px 16px 16px;
     color: #000;
     font-family: Nunito;
     font-size: 20px;
     font-style: normal;
     font-weight: 900;
     line-height: 140%; 
+}
+.imageContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.options{
+    display: flex;
+    width: 100%;
+    justify-content: center; 
+}
+.btnContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.separator{
+    height: 90px;
 }

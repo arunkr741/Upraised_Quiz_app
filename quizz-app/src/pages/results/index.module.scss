@@ -1,0 +1,50 @@
+.loaderContainer{
+    position: relative;
+}
+.resultContainer{
+    position: relative;
+    top: 70px;
+    background-color: #fff;
+    // width: 100%;
+    height: 73.7vh;
+    // height: auto;
+    overflow-y: scroll;
+    border-radius: 16px 16px 0px 0px;
+    
+}
+.resultContainer::-webkit-scrollbar {
+    display: none;
+  }
+.container{
+    height: 100%;
+    background: #AF9CF3;
+    background-blend-mode: multiply;
+    width: 100%;
+}
+.primaryText{
+    color: #000;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 26px;
+    font-weight: 400; 
+    padding-top: 25px;
+}
+.cardConatiner{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.separator{
+    height: 15px;
+}
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.resultMeter{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}

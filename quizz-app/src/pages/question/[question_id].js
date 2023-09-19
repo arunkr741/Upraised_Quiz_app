@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import { PrimaryButton } from '../../components/primary_button'
 import { useRecoilState } from "recoil";
-import { nameState } from "../../atoms/quiz_atoms"
+import { QuestionData } from "../../atoms/quiz_atoms"
 import { getQuestionDetails } from '@/api/apiUtils'
 import { useRouter } from 'next/router'
 import Loader from '@/components/loader';
@@ -11,15 +11,17 @@ import { RoundProgress } from '@/components/progress';
 import { QuestionContainer } from '@/components/questions_section';
 
 const StartPage = () => {
-    const [namea] = useRecoilState(nameState);
+    const [questionData, setQuestionData] = useRecoilState(QuestionData);
     const router = useRouter();
     const {question_id} = router.query
     const [loading, setLoading] = useState(true)
 
     const getQuestionData = async () => {
+        setLoading(true)
         try {
             let res = await getQuestionDetails(question_id);
             console.log(res)
+            setQuestionData(res)
             setLoading(false)
         } catch (error) {
             console.log(error)
@@ -50,10 +52,10 @@ const StartPage = () => {
                 priority
             />
             <div className={styles.progressConatiner}>
-                <RoundProgress current={1} total={5}/>
+                <RoundProgress current={question_id} total={questionData?.total_questions || 1}/>
             </div>
             <div className={styles.questionContainer}> 
-                <QuestionContainer/>
+                <QuestionContainer question_id={question_id} />
             </div>
         </div>
     </div>

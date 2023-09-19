@@ -1,0 +1,22 @@
+.container{
+    width: 360px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    gap: 10px;
+    padding-left: 16px;
+    
+}
+.correctStyles{
+    background-color: rgba(68, 183, 123, 0.25);
+    // opacity: 0.1167;
+    
+}
+.incorrectStyles{
+    background-color: rgba(255, 59, 63, 0.25);
+}
+.countText{
+    opacity: 1;
+    z-index: 1;
+}

@@ -1,6 +1,12 @@
 import { atom } from "recoil";
 
-export const nameState = atom({
-  key: "nameState",
-  default: "sdvdd", 
+
+export const Quizdata = atom({
+  key: "quizId",
+  default: "", 
+});
+
+export const QuestionData = atom({
+  key: "questionData",
+  default: null, 
 });
