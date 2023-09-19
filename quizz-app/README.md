@@ -2,14 +2,14 @@
 
 Welcome to the Quiz App! This application allows you to take quizzes and test your knowledge on various topics.
 
+Live link - https://upraised-quiz-app-3j4u.vercel.app/
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Running Locally](#running-locally)
   - [Docker](#docker)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
