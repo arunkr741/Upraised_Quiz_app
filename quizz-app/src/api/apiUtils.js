@@ -33,4 +33,14 @@ export const getQuizResult = async () => {
     }
 }  
 
+export const submitAnswer = async (data) => {
+    const url = `${BASE_API}/quiz/submit`
+    try {
+        const res = await axios.post(url, data);
+        return res.data
+    } catch (error) {
+        console.log(error)
+    }
+}  
+
 

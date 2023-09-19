@@ -6,13 +6,15 @@ import { QuestionData, Quizdata } from '@/atoms/quiz_atoms'
 import { useRecoilState } from 'recoil'
 import { PrimaryButton } from '../primary_button'
 import { useRouter } from 'next/router'
+import { submitAnswer } from '@/api/apiUtils'
 
 export const QuestionContainer = ({question_id}) => {
   const router = useRouter();
+  const startTime = new Date();
   const [quizData] = useRecoilState(Quizdata);
   const [questionData, setQuestionData] = useRecoilState(QuestionData);
   console.log(questionData,"sd")
-  const [selectedChioce, setSelectedChoice] = useState([])
+  const [selectedChoice, setSelectedChoice] = useState([])
   const {
     question_text = '',
     question_image_url = "",
@@ -24,8 +26,8 @@ export const QuestionContainer = ({question_id}) => {
         setSelectedChoice(prev => [...prev,choiceId])
       }
       else{
-        const choiceArr = [...selectedChioce];
-        const index = [...selectedChioce].indexOf(choiceId);
+        const choiceArr = [...selectedChoice];
+        const index = [...selectedChoice].indexOf(choiceId);
         if (index > -1) { 
           choiceArr.splice(index, 1); 
           setSelectedChoice(prev => choiceArr)
@@ -33,18 +35,29 @@ export const QuestionContainer = ({question_id}) => {
       }
   }
 
+ 
   const handleNext = async() => {
       if(quizData.total_questions == question_id){
         router.push(`/results/`)
         return
       }
+      const endTime = new Date();
+      const timeTakenInSeconds = Math.round((endTime - startTime) / 1000);
+      const data =  {
+        "selected_choices": selectedChoice,
+        "time_taken": timeTakenInSeconds,
+        "question_id": question_id,
+        "quiz_id": quizData?.quiz_id
+      }
+      const res = await submitAnswer(data)
+      console.log(res)
       router.push(`/question/${+question_id+1}/`)
 
   }
 
   useEffect(()=>{
-    console.log(selectedChioce)
-  },[selectedChioce])
+    console.log(selectedChoice)
+  },[selectedChoice])
 
   return (
     <div className={styles.container}>
