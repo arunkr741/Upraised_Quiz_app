@@ -66,11 +66,12 @@ export const QuestionContainer = ({question_id}) => {
         {question_image_url && (
           <div className={styles.imageContainer}>
             <Image
-            src={question_image_url}
-            alt="question-image"
-            className="dark:invert"
-            width={250}
-            height={200}
+              src={question_image_url}
+              alt="question-image"
+              className="dark:invert"
+              width={250}
+              height={200}
+              style={{borderRadius: '12px'}}
             />
           </div>
         )}

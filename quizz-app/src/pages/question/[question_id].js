@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import { PrimaryButton } from '../../components/primary_button'
-import { useRecoilState } from "recoil";
-import { QuestionData } from "../../atoms/quiz_atoms"
+import { useRecoilState, use, useRecoilValue } from "recoil";
+import { QuestionData, Quizdata } from "../../atoms/quiz_atoms"
 import { getQuestionDetails } from '@/api/apiUtils'
 import { useRouter } from 'next/router'
 import Loader from '@/components/loader';
@@ -12,6 +12,7 @@ import { QuestionContainer } from '@/components/questions_section';
 
 const StartPage = () => {
     const [questionData, setQuestionData] = useRecoilState(QuestionData);
+    const quizData = useRecoilValue(Quizdata)
     const router = useRouter();
     const {question_id} = router.query
     const [loading, setLoading] = useState(true)
@@ -20,7 +21,7 @@ const StartPage = () => {
         setLoading(true)
         try {
             let res = await getQuestionDetails(question_id);
-            console.log(res)
+            console.log(res,'questionData')
             setQuestionData(res)
             setLoading(false)
         } catch (error) {
@@ -52,7 +53,7 @@ const StartPage = () => {
                 priority
             />
             <div className={styles.progressConatiner}>
-                <RoundProgress current={question_id} total={questionData?.total_questions || 1}/>
+                <RoundProgress current={question_id} total={quizData?.total_questions}/>
             </div>
             <div className={styles.questionContainer}> 
                 <QuestionContainer question_id={question_id} />
