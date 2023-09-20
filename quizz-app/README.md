@@ -50,7 +50,7 @@ Alternatively, you can run the Quiz App using Docker. A Dockerfile is provided f
 
 1. Build the Docker image:
    ```bash
-   docker build -t my-nextjs-app .
+   docker build -t my-nextjs-app .
    ```
 2. Run the Docker container:
    ```bash
